@@ -64,8 +64,8 @@
           <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/tribs/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="166">
-                  <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+                <state relative-caret-position="300">
+                  <caret line="29" column="29" lean-forward="false" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
@@ -121,7 +121,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/wizard/1_login.fxml" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/tribs/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/tribs/page_objects/Page.java" />
         <option value="$PROJECT_DIR$/src/main/java/tribs/page_objects/Pages.java" />
         <option value="$PROJECT_DIR$/src/main/java/tribs/utils/Drivers.java" />
@@ -129,6 +128,7 @@
         <option value="$PROJECT_DIR$/src/main/java/tribs/utils/Tribs.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/1_login.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/tribs/controllers/WizardController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tribs/Main.java" />
       </list>
     </option>
   </component>
@@ -238,7 +238,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="fxml" type="462c0819:PsiDirectoryNode" />
+              <item name="wizard" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -270,6 +270,7 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/fxml/wizard" />
       <recent name="$PROJECT_DIR$/src/main/resources/fxml" />
       <recent name="$PROJECT_DIR$/src/main/java/tribs" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
@@ -699,7 +700,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/1_login.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/wizard/1_login.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
@@ -735,8 +736,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tribs/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+        <state relative-caret-position="300">
+          <caret line="29" column="29" lean-forward="false" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
           <folding />
         </state>
       </provider>

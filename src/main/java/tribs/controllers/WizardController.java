@@ -72,7 +72,7 @@ public class WizardController {
 
     private void nextScene() throws IOException {
         Stage appStage = (Stage) buttonLogin.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/2_choose_world.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/wizard/2_choose_world.fxml"));
         Scene scene = new Scene(root);
         appStage.setScene(scene);
         appStage.show();
