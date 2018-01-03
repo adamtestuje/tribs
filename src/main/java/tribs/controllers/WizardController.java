@@ -1,17 +1,18 @@
 package tribs.controllers;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import tribs.utils.Tribs;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class WizardController {
     private boolean isLogged = false;
@@ -22,6 +23,7 @@ public class WizardController {
     @FXML private Label labelStatus;
     @FXML private Label labelLogin;
     @FXML private Label labelPassword;
+    @FXML private ChoiceBox<String> selectorWorld;
 
     @FXML
     public void loginTry() throws IOException {
@@ -76,5 +78,14 @@ public class WizardController {
         Scene scene = new Scene(root);
         appStage.setScene(scene);
         appStage.show();
+        populateWorlds();
+    }
+
+    private void populateWorlds() {
+        List<String> worldsList = new ArrayList<>();
+        worldsList.add("Test");
+//        ObservableList worlds = FXCollections.observableList(Tribs.getWorlds());
+        ObservableList<String> w = FXCollections.observableArrayList("Adam", "testuje");
+        selectorWorld.setItems(w);
     }
 }
