@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import tribs.utils.JFX;
 import tribs.utils.Tribs;
 
 import java.io.IOException;
@@ -23,12 +24,11 @@ public class StepFirst {
 
     @FXML
     private void loadNext() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/wizard/stepSecond.fxml"));
-        Stage stage = (Stage) buttonLogin.getScene().getWindow();
-        stage.setTitle("Tribs - First Time Setup Wizard");
-        stage.setScene(new Scene(root, 600, 400));
-        stage.setResizable(false);
-        stage.show();
+        JFX jfx = new JFX();
+        jfx.openStage("/fxml/wizard/stepSecond.fxml",
+                "Tribs - First Time Setup Wizard",
+                (Stage) buttonLogin.getScene().getWindow(),
+                600, 400);
     }
 
     @FXML
