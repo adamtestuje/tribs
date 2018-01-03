@@ -31,12 +31,10 @@ public class LoginPage {
 
     public List getWorldsList() {
         List<String> worldsList = new ArrayList<>();
-        worldsList.add("Test");
-        System.out.println("Worlds: ");
-        System.out.println(driver.findElements(By.className("world_button_active")));
-//        for (WebElement activeWorldButton : allActiveWorldButtons) {
-//            worldsList.add(activeWorldButton.getText());
-//        }
+        List<WebElement> activeWorlds = driver.findElements(buttonsActiveWorlds);
+        for (WebElement activeWorldButton : activeWorlds) {
+            worldsList.add(activeWorldButton.getText().split(" ")[1]);
+        }
         return worldsList;
     }
 }

@@ -1,7 +1,5 @@
-package tribs.controllers;
+package tribs.controllers.wizard;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,24 +9,32 @@ import javafx.stage.Stage;
 import tribs.utils.Tribs;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
-public class WizardController {
+public class StepFirst {
     private boolean isLogged = false;
-    @FXML private TextField inputLogin;
-    @FXML private PasswordField inputPassword;
-    @FXML private Button buttonReset;
+
     @FXML private Button buttonLogin;
-    @FXML private Label labelStatus;
+    @FXML private Button buttonReset;
     @FXML private Label labelLogin;
     @FXML private Label labelPassword;
-    @FXML private ChoiceBox<String> selectorWorld;
+    @FXML private Label labelStatus;
+    @FXML private PasswordField inputPassword;
+    @FXML private TextField inputLogin;
+
+    @FXML
+    private void loadNext() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/wizard/stepSecond.fxml"));
+        Stage stage = (Stage) buttonLogin.getScene().getWindow();
+        stage.setTitle("Tribs - First Time Setup Wizard");
+        stage.setScene(new Scene(root, 600, 400));
+        stage.setResizable(false);
+        stage.show();
+    }
 
     @FXML
     public void loginTry() throws IOException {
         if (isLogged) {
-            nextScene();
+            loadNext();
             return;
         }
         if (inputLogin.getText().isEmpty() || inputPassword.getText().isEmpty()) {
@@ -70,22 +76,5 @@ public class WizardController {
         inputPassword.setText("");
         inputPassword.setDisable(false);
         labelStatus.setText("Status: Idle");
-    }
-
-    private void nextScene() throws IOException {
-        Stage appStage = (Stage) buttonLogin.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/wizard/2_choose_world.fxml"));
-        Scene scene = new Scene(root);
-        appStage.setScene(scene);
-        appStage.show();
-        populateWorlds();
-    }
-
-    private void populateWorlds() {
-        List<String> worldsList = new ArrayList<>();
-        worldsList.add("Test");
-//        ObservableList worlds = FXCollections.observableList(Tribs.getWorlds());
-        ObservableList<String> w = FXCollections.observableArrayList("Adam", "testuje");
-        selectorWorld.setItems(w);
     }
 }

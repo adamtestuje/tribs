@@ -27,7 +27,7 @@ public class Main extends Application {
     }
 
     private void openSetupWizard(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/wizard/1_login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/wizard/stepFirst.fxml"));
         primaryStage.setTitle("Tribs - First Time Setup Wizard");
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.setResizable(false);
