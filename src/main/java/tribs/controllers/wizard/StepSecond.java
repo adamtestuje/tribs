@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
 import tribs.utils.JFX;
+import tribs.utils.Memory;
 import tribs.utils.Tribs;
 
 import java.io.IOException;
@@ -26,6 +27,7 @@ public class StepSecond {
 
     @FXML
     private void loadNext() throws IOException {
+        Memory.rememberWorld(selectorWorld.getSelectionModel().getSelectedItem());
         JFX jfx = new JFX();
         jfx.openStage("/fxml/wizard/stepThird.fxml",
                 "Tribs - First Time Setup Wizard",

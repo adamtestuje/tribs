@@ -1,12 +1,10 @@
 package tribs.controllers.wizard;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import tribs.utils.JFX;
+import tribs.utils.Memory;
 import tribs.utils.Tribs;
 
 import java.io.IOException;
@@ -47,6 +45,7 @@ public class StepFirst {
     private void loginAction() {
         labelStatus.setText(String.format("Status: Trying to login with username: %s...", inputLogin.getText()));
         if (Tribs.login(inputLogin.getText(), inputPassword.getText())) {
+            Memory.rememberUserData(inputLogin.getText(), inputPassword.getText());
             isLogged = true;
             next();
         } else {

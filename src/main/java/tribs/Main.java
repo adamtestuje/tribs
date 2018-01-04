@@ -5,25 +5,27 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import tribs.utils.JFX;
 
 import java.io.File;
 import java.io.IOException;
 
 public class Main extends Application {
-    private final String filePathString = "user.data";
+    private final String filePathString = "userdata.dat";
 
     @Override
     public void start(Stage primaryStage) throws IOException {
         File file = new File(filePathString);
         if(file.exists() && !file.isDirectory()) {
-            openMainView();
+            openMainView(primaryStage);
         } else {
             openSetupWizard(primaryStage);
         }
     }
 
-    private void openMainView() {
-        System.out.println("Main view open!");
+    private void openMainView(Stage stage) throws IOException {
+        JFX jfx = new JFX();
+        jfx.openStage("/mainView.fxml", "Tribs - Main View", stage, 800, 600);
     }
 
     private void openSetupWizard(Stage primaryStage) throws IOException {
