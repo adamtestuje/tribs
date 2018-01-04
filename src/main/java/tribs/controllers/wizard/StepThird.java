@@ -3,8 +3,10 @@ package tribs.controllers.wizard;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import tribs.utils.Drivers;
 import tribs.utils.JFX;
 import tribs.utils.Memory;
+import tribs.utils.Tribs;
 
 import java.io.IOException;
 
@@ -15,6 +17,8 @@ public class StepThird {
     private void finish() {
         Memory.saveUserData();
         try {
+            System.out.printf("GOING TO: %s%n", Tribs.gameRoot((String) Memory.readUserData().get("world")));
+            Drivers.chrome().get(Tribs.gameRoot((String) Memory.readUserData().get("world")));
             loadNext();
         } catch (IOException e) {
             e.printStackTrace();

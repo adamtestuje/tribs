@@ -1,20 +1,26 @@
 package tribs.controllers;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import tribs.utils.Memory;
+import tribs.utils.Tribs;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 public class MainView {
     @FXML Label labelUserData;
     @FXML Label labelVersion;
+    @FXML ChoiceBox<String> selectorVillages;
 
     Map userData;
 
@@ -26,6 +32,14 @@ public class MainView {
     public void initialize() {
         labelUserData.setText(String.format("Login: %s » World: %s", userData.get("login"), userData.get("world")));
         labelVersion.setText("Tribs, version:0.0.0a1");
+        populateVillages();
+    }
+
+    private void populateVillages() {
+        List<String> villages = Tribs.getVillages();
+        ObservableList<String> observableVillages = FXCollections.observableArrayList(villages);
+        selectorVillages.setItems(observableVillages);
+        selectorVillages.getSelectionModel().selectFirst();
     }
 
     @FXML
