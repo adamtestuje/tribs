@@ -24,7 +24,7 @@ public class StepThird {
     @FXML
     private void loadNext() throws IOException {
         JFX jfx = new JFX();
-        jfx.openStage("/mainView.fxml",
+        jfx.openStage("/fxml/mainView.fxml",
                 "Tribs - Main View",
                 (Stage) buttonFinish.getScene().getWindow(),
                 800, 600);

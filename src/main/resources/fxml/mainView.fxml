@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tribs.controllers.MainView">
+   <bottom>
+      <HBox spacing="5.0" style="-fx-border-top: 1px solid black; : ;" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <Label fx:id="labelUserData" text="UserData" />
+            <Separator orientation="VERTICAL" />
+            <Label fx:id="labelVersion" text="Version" />
+         </children>
+      </HBox>
+   </bottom>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Tribs">
+            <items>
+                  <MenuItem fx:id="menuTribsAbout" mnemonicParsing="false" onAction="#showAboutModal" text="About" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem fx:id="menuTribsClose" mnemonicParsing="false" onAction="#close" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem fx:id="menuEditSettings" onAction="#showSettings" mnemonicParsing="false" text="Settings" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

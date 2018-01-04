@@ -25,7 +25,7 @@ public class Main extends Application {
 
     private void openMainView(Stage stage) throws IOException {
         JFX jfx = new JFX();
-        jfx.openStage("/mainView.fxml", "Tribs - Main View", stage, 800, 600);
+        jfx.openStage("/fxml/mainView.fxml", "Tribs - Main View", stage, 800, 600);
     }
 
     private void openSetupWizard(Stage primaryStage) throws IOException {
@@ -35,7 +35,6 @@ public class Main extends Application {
         primaryStage.setResizable(false);
         primaryStage.show();
     }
-
 
     public static void main(String[] args) {
         launch(args);
